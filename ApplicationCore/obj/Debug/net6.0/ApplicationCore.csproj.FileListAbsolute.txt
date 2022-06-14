@@ -1,0 +1,12 @@
+C:\Users\kaichen\source\repos\MovieShopMVC\ApplicationCore\bin\Debug\net6.0\ApplicationCore.deps.json
+C:\Users\kaichen\source\repos\MovieShopMVC\ApplicationCore\bin\Debug\net6.0\ApplicationCore.dll
+C:\Users\kaichen\source\repos\MovieShopMVC\ApplicationCore\bin\Debug\net6.0\ApplicationCore.pdb
+C:\Users\kaichen\source\repos\MovieShopMVC\ApplicationCore\obj\Debug\net6.0\ApplicationCore.csproj.AssemblyReference.cache
+C:\Users\kaichen\source\repos\MovieShopMVC\ApplicationCore\obj\Debug\net6.0\ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kaichen\source\repos\MovieShopMVC\ApplicationCore\obj\Debug\net6.0\ApplicationCore.AssemblyInfoInputs.cache
+C:\Users\kaichen\source\repos\MovieShopMVC\ApplicationCore\obj\Debug\net6.0\ApplicationCore.AssemblyInfo.cs
+C:\Users\kaichen\source\repos\MovieShopMVC\ApplicationCore\obj\Debug\net6.0\ApplicationCore.csproj.CoreCompileInputs.cache
+C:\Users\kaichen\source\repos\MovieShopMVC\ApplicationCore\obj\Debug\net6.0\ApplicationCore.dll
+C:\Users\kaichen\source\repos\MovieShopMVC\ApplicationCore\obj\Debug\net6.0\refint\ApplicationCore.dll
+C:\Users\kaichen\source\repos\MovieShopMVC\ApplicationCore\obj\Debug\net6.0\ApplicationCore.pdb
+C:\Users\kaichen\source\repos\MovieShopMVC\ApplicationCore\obj\Debug\net6.0\ref\ApplicationCore.dll
