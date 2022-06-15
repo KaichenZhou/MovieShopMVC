@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ApplicationCore.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,8 @@ namespace ApplicationCore.Contracts.Services
         //all the business fucntionality methods pertaining to Moives
 
         //MovieModel GetMovieDetails(int movieID)
+        List<MovieCardModel> GetTopGrossingMovies();
+        //get movie details;
+        MovieDetailsModel GetMovieDetails(int id);
     }
 }

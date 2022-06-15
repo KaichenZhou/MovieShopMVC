@@ -11,6 +11,19 @@
         "runtime": {
           "bin/placeholder/ApplicationCore.dll": {}
         }
+      },
+      "Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ApplicationCore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -19,11 +32,17 @@
       "type": "project",
       "path": "../ApplicationCore/ApplicationCore.csproj",
       "msbuildProject": "../ApplicationCore/ApplicationCore.csproj"
+    },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructure/Infrastructure.csproj",
+      "msbuildProject": "../Infrastructure/Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "ApplicationCore >= 1.0.0"
+      "ApplicationCore >= 1.0.0",
+      "Infrastructure >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -60,6 +79,9 @@
           "projectReferences": {
             "C:\\Users\\kaichen\\source\\repos\\MovieShopMVC\\ApplicationCore\\ApplicationCore.csproj": {
               "projectPath": "C:\\Users\\kaichen\\source\\repos\\MovieShopMVC\\ApplicationCore\\ApplicationCore.csproj"
+            },
+            "C:\\Users\\kaichen\\source\\repos\\MovieShopMVC\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\kaichen\\source\\repos\\MovieShopMVC\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }

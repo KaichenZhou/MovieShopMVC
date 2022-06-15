@@ -24,3 +24,8 @@ C:\Users\kaichen\source\repos\MovieShopMVC\MovieShopMVC\obj\Debug\net6.0\refint\
 C:\Users\kaichen\source\repos\MovieShopMVC\MovieShopMVC\obj\Debug\net6.0\MovieShopMVC.pdb
 C:\Users\kaichen\source\repos\MovieShopMVC\MovieShopMVC\obj\Debug\net6.0\MovieShopMVC.genruntimeconfig.cache
 C:\Users\kaichen\source\repos\MovieShopMVC\MovieShopMVC\obj\Debug\net6.0\ref\MovieShopMVC.dll
+C:\Users\kaichen\source\repos\MovieShopMVC\MovieShopMVC\bin\Debug\net6.0\ApplicationCore.dll
+C:\Users\kaichen\source\repos\MovieShopMVC\MovieShopMVC\bin\Debug\net6.0\ApplicationCore.pdb
+C:\Users\kaichen\source\repos\MovieShopMVC\MovieShopMVC\obj\Debug\net6.0\MovieShopMVC.csproj.CopyComplete
+C:\Users\kaichen\source\repos\MovieShopMVC\MovieShopMVC\bin\Debug\net6.0\Infrastructure.dll
+C:\Users\kaichen\source\repos\MovieShopMVC\MovieShopMVC\bin\Debug\net6.0\Infrastructure.pdb

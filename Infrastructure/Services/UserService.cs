@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Services
 {
-    public class UserService: IUserService
+    public class UserService: IUserServic
     {
     }
 }

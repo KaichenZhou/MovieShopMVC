@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ApplicationCore.Contracts.Services;
+using Microsoft.AspNetCore.Mvc;
 using MovieShopMVC.Models;
 using System.Diagnostics;
+using Infrastructure.Services;
 
 namespace MovieShopMVC.Controllers
 {
@@ -8,15 +10,35 @@ namespace MovieShopMVC.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IMovieService _movieService;
+        //depend on higher level abstraction
+
+        public HomeController(ILogger<HomeController> logger, IMovieService movieService)
         {
             _logger = logger;
+            _movieService = movieService;
+            // you want to have control over which implentation that you want to use 
+            //var homeController = new HomeController();
         }
 
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            //var homeController = new HomeController(new Logger(),);
+            //home page;
+            //top 30 movies -> movie service
+            //instance of MovieService class
+            //newing up
+            //refactor this code
+            //var movieService = new MovieService();
+            var movies = _movieService.GetTopGrossingMovies();
+            //method(int x, IMovieService service);
+            //var movieService = new MovieService();
+            //var movieService3 = new MovieTestService();
+
+            //method(3,movieService3);
+            //passing the data from Controller/Action method  to the view
+            return View(movies);
         }
         [HttpGet]
         public IActionResult TopRatedMovies()
