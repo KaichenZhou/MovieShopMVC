@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Repository
 {
-    public class MovieRepository: IMovieRepository 
+    public class MovieRepository
     {
+
     }
+    
 }

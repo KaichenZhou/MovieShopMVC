@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ApplicationCore.Contracts.Repositories;
+using ApplicationCore.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +8,11 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Contracts.Repository
 {
-    public interface IMovieRepository  
+    public interface IMovieRepository :IRepository <Movie>
     {
-        //all the databas logic methods for movies
+        IEnumerable<Movie> Get30HighestGrossingMOvies();
+        //IEnumerable<Movie> Get30HighestGrossingMOvies();
 
-        //Moive GetMoives(int id)
+
     }
 }

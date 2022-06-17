@@ -13,3 +13,5 @@ C:\Users\kaichen\source\repos\MovieShopMVC\Infrastructure\obj\Debug\net6.0\Infra
 C:\Users\kaichen\source\repos\MovieShopMVC\Infrastructure\obj\Debug\net6.0\refint\Infrastructure.dll
 C:\Users\kaichen\source\repos\MovieShopMVC\Infrastructure\obj\Debug\net6.0\Infrastructure.pdb
 C:\Users\kaichen\source\repos\MovieShopMVC\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
+C:\Users\kaichen\source\repos\MovieShopMVC\Infrastructure\bin\Debug\net6.0\Infrastructure.runtimeconfig.json
+C:\Users\kaichen\source\repos\MovieShopMVC\Infrastructure\obj\Debug\net6.0\Infrastructure.genruntimeconfig.cache

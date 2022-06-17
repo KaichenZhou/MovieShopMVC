@@ -1,14 +1,30 @@
 using ApplicationCore.Contracts.Services;
 using Infrastructure.Services;
+using Microsoft.EntityFrameworkCore;
+using Infrastructure.Data;
+
+
+//using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IMovieService, MovieService>();
+
 //DI is first class citizen in .Net Core
 //older .Net framework DI was not builtin,we have to rely on 3rd party libraries
+builder.Services.AddScoped<IMovieService, MovieService>();
+
 //builder.Services.AddScoped<IMovieService, MovieTestService>();
+
+//Inject the connection string into Dbcontext option constructor
+// get the connection string from app settings
+
+builder.Services.AddDbContext<MovieShopDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MovieShopDbConnection"));
+});
+
 
 var app = builder.Build();
 
