@@ -1,0 +1,19 @@
+﻿@model ApplicationCore.Models.MovieDetailsModel
+
+<h1>
+    The test page
+</h1>
+<h2>
+    @Model.Title
+</h2>
+
+<h3>
+    @Model.Overview
+</h3>
+
+@foreach(var trailer in @Model.Trailers)
+{
+    <div>
+        @trailer.Name
+    </div>
+}

@@ -13,7 +13,7 @@ namespace ApplicationCore.Contracts.Repositories
 
         T Add(T entity);
         T Update(T entity);
-        T Delete(int entity);
+        T Delete(T entity);
 
 
     }

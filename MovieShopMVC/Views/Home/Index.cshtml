@@ -4,14 +4,15 @@
     ViewData["Title"] = "Home Page";
 }
 
+<div class="container-fluid">
+    <div class="row">
 
-
-
-<h2>
-    Top Grossing Movies
-</h2>
-
-@foreach(var movie in Model){
-    <h3>MovieId:@movie.Id</h3>
-    <h3>MovieId:@movie.Title</h3>
-}
+        @foreach (var movie in Model)
+        {
+            <div class="col-xl-2 col-lg-3 col-sm-4 col-6">
+                <partial name="_MovieCard" model="movie" />
+            </div>
+        }
+    </div>
+</div>
+ 

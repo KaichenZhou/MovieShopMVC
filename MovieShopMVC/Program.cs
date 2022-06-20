@@ -2,6 +2,8 @@ using ApplicationCore.Contracts.Services;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Infrastructure.Data;
+using ApplicationCore.Contracts.Repository;
+using Infrastructure.Repository;
 
 
 //using Microsoft.EntityFrameworkCore;
@@ -14,6 +16,7 @@ builder.Services.AddControllersWithViews();
 //DI is first class citizen in .Net Core
 //older .Net framework DI was not builtin,we have to rely on 3rd party libraries
 builder.Services.AddScoped<IMovieService, MovieService>();
+builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 
 //builder.Services.AddScoped<IMovieService, MovieTestService>();
 
