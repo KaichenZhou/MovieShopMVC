@@ -27,12 +27,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUb3BSYXRlZE1vdmllcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kaichen/source/repos/MovieShopMVC/MovieShopMVC/Views/Movie/details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcZGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/kaichen/source/repos/MovieShopMVC/MovieShopMVC/Views/Movie/details3.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVcZGV0YWlsczMuY3NodG1s
+[C:/Users/kaichen/source/repos/MovieShopMVC/MovieShopMVC/Views/Movies/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/kaichen/source/repos/MovieShopMVC/MovieShopMVC/Views/Shared/Error.cshtml]

@@ -3,14 +3,20 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MovieShopMVC.Controllers
 {
-    public class MovieController : Controller
+    public class MoviesController : Controller
     {
         private readonly IMovieService _movieService;
-       //showing the detail of the movie
-       public IActionResult Details(int id)
+
+        public MoviesController(IMovieService movieService)
         {
-            var movie = _movieService.GetMovieDetails(id);
-            return View(movie);
+            _movieService = movieService;
+        }
+
+        // showing details of the movie
+        public IActionResult Details(int id)
+        {
+            var movies = _movieService.GetMovieDetails(id);
+            return View(movies);
         }
     }
 }
