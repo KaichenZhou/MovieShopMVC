@@ -1,23 +1,43 @@
 ﻿@model ApplicationCore.Models.MovieDetailsModel
+@using System.Globalization
+
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
 
     <style>
         
         .backgroundImage {
-            height: 24.5rem;
+            height: 21.8rem;
             width: 100%;
             background-size: cover;
             background-color: white;
 
         }
-        
+
+         .gridRule {
+            background-color: transparent;
+            border: 1px solid;
+            border-left: 0;
+            border-right: 0;
+            border-top: 0;
+        }
+        .factsSection {
+            background-color: gray;
+        }
+
+        .castSection {
+            background-color: gray;
+        }
+      
     </style>
+        
 
 <div class="backgroundImage" style="background-image: url(@Model.BackdropUrl)">
     <div class="row">
         <div class="col-md-3 offset-2">
 
             <div>
-                <img src="@Model.PosterUrl" class="card-img-top" width:50%; height: 50% />
+                <img src="@Model.PosterUrl" alt="Forest" width="250" height="350" />
             </div>
 
         </div>
@@ -33,24 +53,31 @@
             </div>
 
             <div class="row">
-                <div class="col-4 text-white font-weight-bold mt-2">
+                <div class="col-4 text-white  mt-2">
                     @Model.RunTime m | @Model.ReleaseDate.Value.Date.Year
                 </div>
                 <div class="col-8">
 
                     @foreach (var genre in Model.Genres)
                     {
-                    <a class="badge" asp-action="Genre" asp-route-id="@genre.Id">
+                    <a class="badge badge-rounded-pill ml-1" asp-action="Genre" asp-route-id="@genre.Id">
                         @genre.Name
                     </a>
                     }
                 </div>
             </div>
-
-            
+            <div class="row">
+                <div class="col-4 mt-3">
+                    <h5>
+                        <span badge rounded-pill text-bg-success">
+                            @Model.Rating
+                        </span>
+                    </h5>
+                </div>
+            </div>
 
             <div class="row">
-                <div class="col-12 text-light mt-2">
+                <div class="col-6 text-light mt-2">
                     @Model.Overview
                 </div>
             </div>
@@ -58,26 +85,95 @@
 
         <div class="col-md-2 mt-4 offset-1">
             <ul class="list-group">
-                <li class="list-group-item">
+                <li class="gridRule">
 
                 </li>
-                <li class="list-group-item">
-                    <button type="button" class="btn btn-outline-light btn-lg btn-block btn-sm">
+                <li class="gridRule">
+                    <button type="button" class="btn btn-primary btn-sm">
                         <i class="far fa-edit mr-1"></i>
                         REVIEW
                     </button>
                 </li>
                 
 
-                <li class="list-group-item">
-                    <a class="btn btn-light btn-lg btn-block btn-sm" asp-route-id="@Model.Id" asp-controller="User" asp-action="PurchaseMovie">
+                <li class="gridRule">
+                    <a class="btn btn-light btn-sm" asp-route-id="@Model.Id" asp-controller="User" asp-action="PurchaseMovie">
                         BUY @Model.Price
                     </a>
-
-                    
                 </li>
             </ul>
         </div>
 
+    </div>
+</div>
+
+    <div class="row mt-4">
+        <div class="col-4 factsSection">
+            <h5>MOVIE FACTS</h5>
+        <hr>
+        <ul class="list-group list-group-flush">
+            <li class="gridRule">
+                <i class="far fa-calendar-alt mr-2"></i>Release Date
+                <span class="badge rounded-pill text-bg-dark">@Model.ReleaseDate.Value.ToShortDateString()</span>
+            </li>
+
+            <li class="gridRule">
+                <i class="fas fa-hourglass-half mr-2"></i>Run Time
+                <span class="badge rounded-pill text-bg-dark">@Model.RunTime.Value m</span>
+            </li>
+            <li class="gridRule">
+                <i class="far fa-money-bill-alt"></i> Box Office
+                <span class="badge rounded-pill text-bg-dark">
+                    @NumberFormatInfo.CurrentInfo.CurrencySymbol
+                    @Model.Revenue?.ToString("C0")
+                </span>
+            </li>
+
+            <li class="gridRule">
+                <i class="fas fa-dollar-sign mr-2"></i> Budget
+                <span class="badge rounded-pill text-bg-dark">
+                    @NumberFormatInfo.CurrentInfo.CurrencySymbol
+                    @Model.Budget?.ToString("C0")
+                </span>
+            </li>
+
+            <li class="gridRule">
+                <i class="fab fa-imdb"></i>
+
+                <a href="@Model.ImdbUrl"
+                   class="text-dark ml-3"
+                   target="_blank">
+                    <i class="fas fa-share-square mr-2"></i>
+                </a>
+            </li>         
+         <h5>Trailers</h5>
+              <li class="gridRule">
+                    <button type="button" class="btn btn-outline-light btn-lg btn-block btn-sm">
+                        <i class="fab fa-youtube mr-1"></i> 
+                        <h6 class="text-white">
+                        @Model.Title
+                        </h6>
+                    </button>
+                </li>
+        </ul>
+
+        </div>
+
+     <div class="castSection castcol-4 offset-1">
+        <h5>CAST</h5>
+        <table class="table">
+            <tbody>
+                @foreach (var cast in Model?.Casts)
+                {
+                <tr>
+                    <td>
+                        <img src="@cast.ProfilePath" class="cast-small-img rounded-circle" alt="@cast.Name" />
+                    </td>
+                    <td> @cast.Name </td>
+                    <td> @cast.Character</td>
+                </tr>
+                }
+            </tbody>
+        </table>
     </div>
 </div>

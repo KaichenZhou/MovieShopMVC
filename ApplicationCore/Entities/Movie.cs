@@ -27,11 +27,11 @@ namespace ApplicationCore.Entities
         public string? UpdatedBy { get; set; }
         public string? CreatedBy { get; set; }
 
-        public ICollection<MovieGenre> MovieGenres { get; set; }
-        public ICollection<Trailer> Trailers { get; set; }
-        public ICollection<MovieCrew> MovieCrews { get; set; }
-        public ICollection<MovieCast> MovieCasts { get; set; }
-        public ICollection<Review> Reviews { get; set; }
+        public ICollection<MovieGenre>? MovieGenres { get; set; }
+        public ICollection<Trailer>? Trailers { get; set; }
+        public ICollection<MovieCrew>? MovieCrews { get; set; }
+        public ICollection<MovieCast>? MovieCasts { get; set; }
+        public ICollection<Review>? Reviews { get; set; }
         public ICollection<Favorite> Favorites { get; set; }
         public ICollection<Purchase> Purchases { get; set; }
 

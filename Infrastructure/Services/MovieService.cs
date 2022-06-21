@@ -21,6 +21,8 @@ namespace Infrastructure.Services
         {
             var movieDetails = _movieRepostiory.GetById(id);
 
+
+
             var movie = new MovieDetailsModel
             {
                 //all these prop will be displayed on the movie detail page
@@ -39,14 +41,30 @@ namespace Infrastructure.Services
             };
             foreach(var genre in movieDetails.MovieGenres)
             {
-                movie.Genres.Add(new GenreModel { Id = genre.GenreId, Name = genre.Genre.Name });
-            }
-
-            foreach(var trailer in movieDetails.Trailers)
-            {
-                movie.Trailers.Add(new TrailerModel { Id = trailer.Id, Name = trailer.Name, TrailerUrl = trailer.TrailerUrl });
+                movie.Genres.Add(new GenreModel { Id = genre.Genre.Id, Name = genre.Genre.Name });
             }
             return movie;
+            
+            foreach (var cast in movieDetails.MovieCasts)
+            {
+                movie.Casts.Add(new CastModel { Id = cast.Cast.Id, 
+                                                   Name = cast.Cast.Name,
+                                                   TmdbUrl = cast.Cast.TmdbUrl,
+                                                   //Character = cast.MovieCast.Character,
+                                                   ProfilePath = cast.Cast.ProfilePath,});
+            }
+            return movie;
+            
+
+            foreach (var trailer in movieDetails.Trailers)
+            {
+                movie.Trailers.Add(new TrailerModel { Id = trailer.Id, 
+                                                      Name = trailer.Name, 
+                                                      TrailerUrl = trailer.TrailerUrl });
+            }
+            return movie;
+
+            
         }
 
         public MovieDetailsModel GetMovieDetailsModel(int id)
