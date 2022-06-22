@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Infrastructure.Data;
 using ApplicationCore.Contracts.Repository;
 using Infrastructure.Repository;
+using ApplicationCore.Contracts.Repositories;
+using ApplicationCore.Entities;
+using Infrastructure.Repositories;
 
 
 //using Microsoft.EntityFrameworkCore;
@@ -17,6 +20,11 @@ builder.Services.AddControllersWithViews();
 //older .Net framework DI was not builtin,we have to rely on 3rd party libraries
 builder.Services.AddScoped<IMovieService, MovieService>();
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+builder.Services.AddScoped<ICastService, CastService>();
+builder.Services.AddScoped<ICastRepository, CastRepository>();
+builder.Services.AddScoped<IRepository<Genre>, Repository<Genre>>();
+builder.Services.AddScoped<IGenreService,GenreService>();
+
 
 //builder.Services.AddScoped<IMovieService, MovieTestService>();
 

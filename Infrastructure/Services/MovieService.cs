@@ -9,7 +9,7 @@ using ApplicationCore.Models;
 
 namespace Infrastructure.Services
 {
-    public class MovieService: IMovieService
+    public class MovieService : IMovieService
     {
         private readonly IMovieRepository _movieRepostiory;
 
@@ -38,33 +38,36 @@ namespace Infrastructure.Services
                 Revenue = movieDetails.Revenue,
                 Budget = movieDetails.Budget,
                 ReleaseDate = movieDetails.ReleaseDate,
+                Overview = movieDetails.Overview,
+
             };
-            foreach(var genre in movieDetails.MovieGenres)
+            foreach (var genre in movieDetails.MovieGenres)
             {
                 movie.Genres.Add(new GenreModel { Id = genre.Genre.Id, Name = genre.Genre.Name });
             }
-            return movie;
-            
+            /*
             foreach (var cast in movieDetails.MovieCasts)
             {
-                movie.Casts.Add(new CastModel { Id = cast.Cast.Id, 
-                                                   Name = cast.Cast.Name,
-                                                   TmdbUrl = cast.Cast.TmdbUrl,
-                                                   //Character = cast.MovieCast.Character,
-                                                   ProfilePath = cast.Cast.ProfilePath,});
+                movie.Casts.Add(new CastModel { Id = cast.CastId, 
+                                                Name = cast.Cast.Name,
+                                                Character = cast.Character, 
+                                                ProfilePath = cast.Cast.ProfilePath });
             }
-            return movie;
-            
+            */
+
 
             foreach (var trailer in movieDetails.Trailers)
             {
-                movie.Trailers.Add(new TrailerModel { Id = trailer.Id, 
-                                                      Name = trailer.Name, 
-                                                      TrailerUrl = trailer.TrailerUrl });
+                movie.Trailers.Add(new TrailerModel
+                {
+                    Id = trailer.Id,
+                    Name = trailer.Name,
+                    TrailerUrl = trailer.TrailerUrl
+                });
             }
             return movie;
 
-            
+
         }
 
         public MovieDetailsModel GetMovieDetailsModel(int id)
@@ -77,9 +80,9 @@ namespace Infrastructure.Services
         }
         //method that return top movies to the caller
         //list of movies
-        
+
         public List<MovieCardModel> GetTopGrossingMovies()
-        {   
+        {
             /*
             //call the movie repository to  get the data from database
             var movies = new List<MovieCardModel>
@@ -89,13 +92,12 @@ namespace Infrastructure.Services
                 new MovieCardModel {Id=3,PosterUrl="",Title=""},
                 new MovieCardModel {Id=4,PosterUrl="",Title=""},
                 new MovieCardModel {Id=5,PosterUrl="",Title=""},
-
             };
             return movies;
             */
             var movies = _movieRepostiory.Get30HighestGrossingMovies();
             var movieCards = new List<MovieCardModel>();
-            foreach(var movie in movies)
+            foreach (var movie in movies)
             {
                 movieCards.Add(new MovieCardModel { Id = movie.Id, PosterUrl = movie.PosterUrl, Title = movie.Title });
             }

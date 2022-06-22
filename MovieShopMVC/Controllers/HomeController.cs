@@ -21,7 +21,6 @@ namespace MovieShopMVC.Controllers
             //var homeController = new HomeController();
         }
 
-        [HttpGet]
         public IActionResult Index()
         {
             //var homeController = new HomeController(new Logger(),);

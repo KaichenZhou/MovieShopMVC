@@ -28,7 +28,9 @@ namespace Infrastructure.Repositories
 
         public virtual IEnumerable<T> GetAll()
         {
-            throw new NotImplementedException();
+            //get all records from the table
+            //we can use this method for getting all list of genres
+            return _dbContext.Set<T>();
         }
 
         public virtual T GetById(int id)

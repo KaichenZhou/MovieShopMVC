@@ -40,7 +40,7 @@ namespace Infrastructure.Repository
                    .Include(m => m.Trailers)
                    .FirstOrDefault(m => m.Id == id);
             return movieDetails;
-                
+
         }
     }
 

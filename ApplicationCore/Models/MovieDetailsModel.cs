@@ -39,7 +39,6 @@ namespace ApplicationCore.Models
         public decimal? Rating { get; set; }
 
 
-
         public List<GenreModel> Genres { get; set; }
         public List<CastModel> Casts { get; set; }
         public List<TrailerModel>Trailers { get; set; }

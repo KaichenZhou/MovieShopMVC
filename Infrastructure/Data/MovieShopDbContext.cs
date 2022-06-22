@@ -132,7 +132,7 @@ namespace Infrastructure.Data
             builder.HasKey(mc => new { mc.CastId, mc.MovieId, mc.Character });
 
             builder.HasOne(mc => mc.Movie).WithMany(mc => mc.MovieCasts).HasForeignKey(mc => mc.MovieId);
-            //builder.HasOne(mc => mc.Cast).WithMany(mc => mc.MovieCasts).HasForeignKey(mc => mc.CastId);
+            builder.HasOne(mc => mc.Cast).WithMany(mc => mc.MovieCasts).HasForeignKey(mc => mc.CastId);
         }
         private void ConfigureCrew(EntityTypeBuilder<Crew> builder)
         {

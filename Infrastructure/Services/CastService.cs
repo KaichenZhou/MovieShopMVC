@@ -1,13 +1,43 @@
-﻿using ApplicationCore.Contracts.Services;
+﻿using ApplicationCore.Contracts.Repositories;
+using ApplicationCore.Contracts.Services;
+using ApplicationCore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure.Services
+namespace ApplicationCore.Contracts.Services
 {
-    public class CastService: ICastService
+    public class CastService : ICastService
     {
+        private readonly ICastRepository _castRepository;
+
+        public CastService(ICastRepository castRepository)
+        {
+            _castRepository = castRepository;
+        }
+        public CastDetailsModel GetCastDetails(int id)
+        {
+            var castDetails = _castRepository.GetById(id);
+
+            var cast = new CastDetailsModel
+            {
+                Id = castDetails.Id,
+                Name = castDetails.Name,
+                Gender = castDetails.Gender,
+                TmdbUrl = castDetails.TmdbUrl,
+                ProfilePath = castDetails.ProfilePath,
+            };
+
+            foreach (var movie in castDetails.MovieCasts)
+            {
+                cast.Movies.Add(new MovieCardModel { Id = movie.CastId, 
+                                                    Title = movie.Movie.Title, 
+                                                    PosterUrl = movie.Movie.PosterUrl });
+            }
+
+            return cast;
+        }
     }
 }
