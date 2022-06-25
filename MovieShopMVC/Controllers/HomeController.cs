@@ -21,7 +21,7 @@ namespace MovieShopMVC.Controllers
             //var homeController = new HomeController();
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             //var homeController = new HomeController(new Logger(),);
             //home page;
@@ -30,7 +30,7 @@ namespace MovieShopMVC.Controllers
             //newing up
             //refactor this code
             //var movieService = new MovieService();
-            var movies = _movieService.GetTopGrossingMovies();
+            var movies =await _movieService.GetTopGrossingMovies();
             //method(int x, IMovieService service);
             //var movieService = new MovieService();
             //var movieService3 = new MovieTestService();

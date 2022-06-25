@@ -12,9 +12,9 @@ namespace MovieShopMVC.Views.Shared.Components.Genres
             _genreService = genreService;
         }
 
-        public IViewComponentResult Invoke()
+        public async Task<IViewComponentResult> InvokeAsync()
         {
-            var genres = _genreService.GetAllGenres();
+            var genres = await _genreService.GetAllGenres();
             return View(genres);
         }
     }

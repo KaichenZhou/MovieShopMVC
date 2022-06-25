@@ -19,9 +19,9 @@ namespace Infrastructure.Services
             _genreRepository = genreRepository;
         }
 
-        public IEnumerable<GenreModel> GetAllGenres()
+        public async Task<IEnumerable<GenreModel>> GetAllGenres()
         {
-            var genres = _genreRepository.GetAll();
+            var genres =await _genreRepository.GetAll();
             var genresModel = genres.Select(g => new GenreModel { Id = g.Id, Name = g.Name });
             return genresModel;
         }

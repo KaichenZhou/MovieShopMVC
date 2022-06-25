@@ -17,9 +17,9 @@ namespace ApplicationCore.Contracts.Services
         {
             _castRepository = castRepository;
         }
-        public CastDetailsModel GetCastDetails(int id)
+        public async Task<CastDetailsModel> GetCastDetails(int id)
         {
-            var castDetails = _castRepository.GetById(id);
+            var castDetails =await _castRepository.GetById(id);
 
             var cast = new CastDetailsModel
             {
@@ -32,9 +32,12 @@ namespace ApplicationCore.Contracts.Services
 
             foreach (var movie in castDetails.MovieCasts)
             {
-                cast.Movies.Add(new MovieCardModel { Id = movie.CastId, 
-                                                    Title = movie.Movie.Title, 
-                                                    PosterUrl = movie.Movie.PosterUrl });
+                cast.Movies.Add(new MovieCardModel
+                {
+                    Id = movie.CastId,
+                    Title = movie.Movie.Title,
+                    PosterUrl = movie.Movie.PosterUrl
+                });
             }
 
             return cast;

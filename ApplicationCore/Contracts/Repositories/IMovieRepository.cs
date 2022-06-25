@@ -10,8 +10,10 @@ namespace ApplicationCore.Contracts.Repository
 {
     public interface IMovieRepository : IRepository<Movie>
     {
-        IEnumerable<Movie> Get30HighestGrossingMovies();
-        IEnumerable<Movie> Get30HighestRatedoMovies();
+         Task <IEnumerable<Movie>> Get30HighestGrossingMovies();
+         Task <IEnumerable<Movie>> Get30HighestRatedoMovies();
+        //IEnumerable<Movie> Get30HighestGrossingMovies();
+        //IEnumerable<Movie> Get30HighestRatedoMovies();
     }
 
 

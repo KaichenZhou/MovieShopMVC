@@ -12,8 +12,14 @@ namespace ApplicationCore.Contracts.Services
         //all the business fucntionality methods pertaining to Moives
 
         //MovieModel GetMovieDetails(int movieID)
-        List<MovieCardModel> GetTopGrossingMovies();
+        Task<List<MovieCardModel>> GetTopGrossingMovies();
+
+        // get movie details
+         Task<MovieDetailsModel> GetMovieDetails(int id);
+
+
+        //List<MovieCardModel> GetTopGrossingMovies();
         //get movie details;
-        MovieDetailsModel GetMovieDetails(int id);
+        //MovieDetailsModel GetMovieDetails(int id);
     }
 }

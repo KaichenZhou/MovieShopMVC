@@ -17,9 +17,9 @@ namespace Infrastructure.Services
         {
             _movieRepostiory = movieRepostiory;
         }
-        public MovieDetailsModel GetMovieDetails(int id)
+        public async Task< MovieDetailsModel> GetMovieDetails(int id)
         {
-            var movieDetails = _movieRepostiory.GetById(id);
+            var movieDetails =await _movieRepostiory.GetById(id);
 
 
 
@@ -81,7 +81,7 @@ namespace Infrastructure.Services
         //method that return top movies to the caller
         //list of movies
 
-        public List<MovieCardModel> GetTopGrossingMovies()
+        public async Task<List<MovieCardModel>> GetTopGrossingMovies()
         {
             /*
             //call the movie repository to  get the data from database
@@ -95,7 +95,7 @@ namespace Infrastructure.Services
             };
             return movies;
             */
-            var movies = _movieRepostiory.Get30HighestGrossingMovies();
+            var movies =await _movieRepostiory.Get30HighestGrossingMovies();
             var movieCards = new List<MovieCardModel>();
             foreach (var movie in movies)
             {

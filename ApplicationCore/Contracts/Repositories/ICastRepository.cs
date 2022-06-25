@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Contracts.Repositories
 {
-    public interface ICastRepository : IRepository<Cast>
-    {
-        
-    }
+	public interface ICastRepository : IRepository<Cast>
+	{
+
+	}
 }
