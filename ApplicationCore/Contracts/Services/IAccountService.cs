@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace ApplicationCore.Contracts.Services
 {
-    public class IAccountService
+    public interface IAccountService
     {
-        //bool RegisterUser(UserRegisterModel model);
+        Task<bool> RegisterUser(UserRegisterModel model);
+        Task<UserModel> ValidateUser(string email, string password);
     }
 }

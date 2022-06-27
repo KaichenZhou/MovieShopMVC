@@ -1,6 +1,11 @@
 ﻿namespace MovieShopMVC.Services
 {
-    public class ICurrentLogedInUser
+    public interface ICurrentLogedInUser
     {
+        int UserId { get; }
+        string Email { get; }
+        string FullName { get; }
+        IEnumerable<string> Roles { get; }
+        bool IsAuthenticated { get; }
     }
 }
