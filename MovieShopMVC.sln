@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieShopMVC", "MovieShopMVC\MovieShopMVC.csproj", "{6315DF92-2088-4A6C-A22F-DA150F4172FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieShopMVC", "MovieShopMVC\MovieShopMVC.csproj", "{6315DF92-2088-4A6C-A22F-DA150F4172FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationCore", "ApplicationCore\ApplicationCore.csproj", "{AEE05B43-CFFE-4DC1-A338-EA97BD6DDF44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationCore", "ApplicationCore\ApplicationCore.csproj", "{AEE05B43-CFFE-4DC1-A338-EA97BD6DDF44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{9FA28C0A-8605-4E9E-887A-80C83801EA7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{9FA28C0A-8605-4E9E-887A-80C83801EA7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieShopAPI", "MovieShopAPI\MovieShopAPI.csproj", "{CAAD0F1C-0773-4A0D-831F-223BE7432FB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{9FA28C0A-8605-4E9E-887A-80C83801EA7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FA28C0A-8605-4E9E-887A-80C83801EA7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FA28C0A-8605-4E9E-887A-80C83801EA7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAAD0F1C-0773-4A0D-831F-223BE7432FB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAAD0F1C-0773-4A0D-831F-223BE7432FB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAAD0F1C-0773-4A0D-831F-223BE7432FB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAAD0F1C-0773-4A0D-831F-223BE7432FB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

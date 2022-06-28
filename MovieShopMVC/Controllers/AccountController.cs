@@ -39,6 +39,7 @@ namespace MovieShopMVC.Controllers
                    new Claim (ClaimTypes.GivenName, user.FirstName),
                    new Claim (ClaimTypes.NameIdentifier, user.Id.ToString()),
                    new Claim (ClaimTypes.DateOfBirth, user.DateOfBirth.ToShortDateString()),
+                   new Claim (ClaimTypes.HomePhone, user.PhoneNumber),
                    new Claim (ClaimTypes.Country, "USA"),
                    new Claim ("Language", "English"),
                 };

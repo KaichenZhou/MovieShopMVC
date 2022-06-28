@@ -48,7 +48,8 @@ namespace Infrastructure.Services
                 Salt = salt,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
-                DateOfBirth = model.DateOfBirth
+                DateOfBirth = model.DateOfBirth,
+                PhoneNumber = model.PhoneNumber
             };
 
             // save the user to User table using UserRepository
@@ -81,7 +82,8 @@ namespace Infrastructure.Services
                     DateOfBirth = user.DateOfBirth.GetValueOrDefault(),
                     Email = user.Email,
                     FirstName = user.FirstName,
-                    LastName = user.LastName
+                    LastName = user.LastName,
+                    PhoneNumber = user.PhoneNumber
                 };
                 return userModel;
             }
