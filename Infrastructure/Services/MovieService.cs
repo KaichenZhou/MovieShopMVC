@@ -119,6 +119,9 @@ namespace Infrastructure.Services
 
         }
 
-       
+        public Task<MovieDetailsModel> GetTopRatedMovies()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

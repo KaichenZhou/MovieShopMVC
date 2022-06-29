@@ -26,10 +26,11 @@ namespace Infrastructure.Repository
             return movies;
         }
 
-        public Task <IEnumerable<Movie>> Get30HighestRatedoMovies()
+        public Task<IEnumerable<Movie>> Get30HighestRatedMovies()
         {
             throw new NotImplementedException();
         }
+
         public async override Task<Movie> GetById(int id)
         {
             //select * from movie
@@ -60,6 +61,8 @@ namespace Infrastructure.Repository
             var pagedMovies = new PagedResultSetModel<Movie>(pageNumber, totalMoviesForGenre, pageSize, movies);
             return pagedMovies;
         }
+
+        
     }
 
 }

@@ -15,6 +15,35 @@ namespace MovieShopAPI.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> Index()
+        {
+            
+            return Ok();
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> Details(int id)
+        {
+            var movie = await _movieService.GetMovieDetails(id);
+            if (movie == null)
+            {
+                return NotFound(new { error = "No Movies Found in DB" });
+            }
+            return Ok(movie);
+        }
+
+        
+        [Route("top-rated")]
+        [HttpGet]
+        public async Task<IActionResult> Top30Rated()
+        {
+           
+            return Ok();
+        }
+        
+
+        [HttpGet]
         [Route("top-grossing")]
         // Attribute Routing
         // MVC http://localhost/movies/GetTopGrossingMovies => Traditional/Convention based routing
@@ -34,9 +63,25 @@ namespace MovieShopAPI.Controllers
                 // 404
                 return NotFound(new { errorMessage = "No Movies Found" });
             }
-
             return Ok(movies);
-
         }
+
+        [HttpGet]
+        [Route("genre/{genreId}")]
+
+        public async Task<IActionResult> MoviesByGenre(int genreId)
+        {
+            
+            return Ok();
+        }
+
+        [Route("{id}/review")]
+        [HttpGet]
+        public async Task<IActionResult> Top30Reviews(int id)
+        {
+            
+            return Ok();
+        }
+
     }
 }
