@@ -7,5 +7,6 @@ namespace MovieShopAPI.Controllers
     [ApiController]
     public class AdminController : ControllerBase
     {
+
     }
 }

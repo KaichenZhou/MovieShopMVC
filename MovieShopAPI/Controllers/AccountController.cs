@@ -34,12 +34,12 @@ namespace MovieShopAPI.Controllers
         [Route("check-email")]
         public async Task<IActionResult> CheckEmail(string email)
         {
-            var dbUser = await _userRepository.GetUserByEmail(email);
-            if (dbUser == null)
+            var user = await _userRepository.GetUserByEmail(email);
+            if (user == null)
             {
                 return NotFound(new { errorMessage = "The email not found in DB" });
             }
-            return Ok(dbUser);
+            return Ok(user);
         }
 
         [HttpPost]
